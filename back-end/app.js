@@ -40,6 +40,12 @@ app.get('/messages', async (req, res) => {
   }
 })
 
+app.get('/api/about', (req, res) => {
+  // You can read the specific JSON file here
+  const about = require('./about.json');
+  res.json(about);
+});
+
 // a route to handle fetching a single message by its id
 app.get('/messages/:messageId', async (req, res) => {
   // load all messages from database
