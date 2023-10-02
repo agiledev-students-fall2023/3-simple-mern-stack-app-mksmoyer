@@ -11,28 +11,28 @@ const About = () => {
     axios
       .get(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/about`)
       .then((response) => {
-        const about = response.data.about;
-        setAboutData(about);
+        const about = response.data.about
+        setAboutData(about)
       })
       .catch((err) => {
-        setError(`Error fetching data: ${err.message}`);
+        setError(`Error fetching data: ${err.message}`)
       })
       .finally(() => {
-        setLoaded(true);
-      });
-  };
+        setLoaded(true)
+      })
+  }
 
   useEffect(() => {
-    fetchAboutData();
+    fetchAboutData()
 
     const intervalHandle = setInterval(() => {
-      fetchAboutData();
-    }, 5000);
+      fetchAboutData()
+    }, 5000)
 
     return () => {
-      clearInterval(intervalHandle);
-    };
-  }, []);
+      clearInterval(intervalHandle)
+    }
+  }, [])
 
   return (
     <div>
@@ -41,8 +41,8 @@ const About = () => {
       <p>{aboutData.bio}</p>
       <img src={aboutData.image_url} alt="Michael Smoyer" />
     </div>
-  );
-};
+  )
+}
 
 export default About;
 

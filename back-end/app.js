@@ -22,6 +22,7 @@ mongoose
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
 
+
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
   // load all messages from database
